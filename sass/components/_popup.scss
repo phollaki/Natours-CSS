@@ -8,6 +8,7 @@
   left: 0;
   background-color: rgba($color-black, 0.8);
   transition: all 0.3s;
+  backdrop-filter: blur(10px);
 
   &__content {
     width: 75%;
@@ -22,21 +23,35 @@
     overflow: hidden;
     opacity: 0;
     transition: all 0.4s 0.2s;
+    @include respond(phone) {
+      display: block;
+      position: relative;
+    }
   }
   &__left {
     width: 33.3333%;
     display: table-cell;
     vertical-align: middle;
+    @include respond(phone) {
+      display: flex;
+      width: 100%;
+    }
   }
   &__right {
     width: 66.6667%;
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem;
+    @include respond(phone) {
+      width: 100%;
+    }
   }
   &__img {
     width: 100%;
     display: block;
+    @include respond(phone) {
+      width: 50%;
+    }
   }
   &__text {
     font-size: 1.5rem;
@@ -52,6 +67,11 @@
     -moz-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto;
+    @include respond(phone) {
+      width: 100%;
+      column-count: 1;
+      column-gap: 0rem;
+    }
   }
   &:target {
     opacity: 1;

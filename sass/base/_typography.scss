@@ -17,6 +17,10 @@
     animation-iteration-count: 3;
     animation-delay:3s; 
     */
+    @include respond(phone) {
+      letter-spacing: 1rem;
+      font-size: 5rem;
+    }
   }
   &--sub {
     display: block;
@@ -24,6 +28,10 @@
     font-weight: 700;
     letter-spacing: 1.75rem;
     animation: moveInRight 1s ease-out;
+    @include respond(phone) {
+      letter-spacing: 0.5rem;
+      font-size: 2rem;
+    }
   }
 }
 .heading-secondary {
@@ -44,7 +52,12 @@
   color: transparent;
   transition: all 0.2s;
   letter-spacing: 0.2rem;
-
+  @include respond(tab-port) {
+    font-size: 3rem;
+  }
+  @include respond(phone) {
+    font-size: 2.5rem;
+  }
   &:hover {
     transform: skewY(2deg) skewX(15deg) scale(1.1);
     text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.2);
@@ -55,7 +68,7 @@
   font-size: 1.6rem;
   font-weight: 700;
   text-transform: uppercase;
-  color:grey;
+  color: grey;
 }
 .paragraph {
   font-size: 1.6rem;
